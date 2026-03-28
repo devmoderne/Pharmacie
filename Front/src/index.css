@@ -1,0 +1,9 @@
+/* src/index.css */
+
+/* Importation des icônes Font Awesome */
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+/* Ensuite, importe Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
