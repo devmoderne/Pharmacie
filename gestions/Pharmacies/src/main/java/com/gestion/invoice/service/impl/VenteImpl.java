@@ -19,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -132,6 +133,13 @@ public class VenteImpl implements VenteService {
 
         return venteRepository.saveAndFlush(vente); // 🔥 flush = ID garanti
     }
-
-
+    @Override
+    public List<Vente> allTicket(String startDate, String endDate) {
+        if (startDate != null && endDate != null) {
+            LocalDate start = LocalDate.parse(startDate);
+            LocalDate end = LocalDate.parse(endDate);
+            return venteRepository.findByDateVenteBetweenAndEtatTrue(start, end);
+        }
+        return venteRepository.findAll();
+    }
 }

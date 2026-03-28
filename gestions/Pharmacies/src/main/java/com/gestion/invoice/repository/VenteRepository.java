@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -69,6 +70,9 @@ public interface VenteRepository extends JpaRepository<Vente, Long> {
             "AND FUNCTION('DATE', v.dateVente) = CURRENT_DATE " +
             "ORDER BY v.dateVente DESC")
     List<Vente> findVentesDuJourByUser(@Param("userId") Long userId);
+
+   // List<Vente> findByDateVenteBetweenAndEtatTrue(LocalDateTime start, LocalDateTime end);
+    List<Vente> findByDateVenteBetweenAndEtatTrue(LocalDate start, LocalDate end);
 
 }
 

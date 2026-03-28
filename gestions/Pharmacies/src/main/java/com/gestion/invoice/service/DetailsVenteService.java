@@ -4,6 +4,8 @@ import com.gestion.invoice.models.CompteurTicket;
 import com.gestion.invoice.models.DetailsVentes;
 import com.gestion.invoice.models.Vente;
 import com.gestion.invoice.models.Produit;
+
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -25,4 +27,5 @@ public interface DetailsVenteService {
     int getStockVenduParProduit(Long produitId);
     double getTotalVenteParProduit(Long produitId);
     double getBeneficeSurAchatParProduit(Long produitId);
+    List<Vente> getVentesEntreDates(LocalDate debut, LocalDate fin);
 }

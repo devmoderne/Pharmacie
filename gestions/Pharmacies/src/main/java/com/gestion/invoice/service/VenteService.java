@@ -17,5 +17,6 @@ public interface VenteService {
     void deleteTicket(Long id);
     List<Vente> getVentesDuJourByUser(String username);
     Vente createTicket(VenteCreateDTO dto);
+    List<Vente> allTicket(String startDate, String endDate);
 
 }
