@@ -1,0 +1,1193 @@
+2026-03-28T10:05:26.549+01:00  INFO 51736 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 51736 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T10:05:26.551+01:00  INFO 51736 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T10:05:26.582+01:00 DEBUG 51736 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6b530eb9
+2026-03-28T10:05:27.218+01:00  INFO 51736 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T10:05:27.331+01:00  INFO 51736 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 13 JPA repository interfaces.
+2026-03-28T10:05:27.931+01:00  INFO 51736 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T10:05:27.969+01:00  INFO 51736 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T10:05:28.022+01:00  INFO 51736 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T10:05:28.235+01:00  INFO 51736 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T10:05:28.263+01:00  INFO 51736 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T10:05:28.419+01:00  INFO 51736 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d18338b
+2026-03-28T10:05:28.422+01:00  INFO 51736 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T10:05:28.472+01:00  WARN 51736 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T10:05:28.493+01:00  INFO 51736 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T10:05:29.551+01:00  INFO 51736 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T10:05:29.642+01:00  INFO 51736 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T10:05:30.007+01:00  INFO 51736 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T10:05:31.546+01:00  INFO 51736 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T10:05:31.567+01:00  WARN 51736 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T10:05:31.694+01:00  INFO 51736 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T10:05:31.728+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+	{GET [/api/v1/categorie/all]}: allCategories()
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+2026-03-28T10:05:31.736+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+2026-03-28T10:05:31.738+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T10:05:31.740+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+2026-03-28T10:05:31.744+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T10:05:31.749+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T10:05:31.751+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+2026-03-28T10:05:31.754+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T10:05:31.757+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T10:05:31.760+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T10:05:31.762+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T10:05:31.765+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T10:05:31.768+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T10:05:31.773+01:00 TRACE 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T10:05:31.776+01:00 DEBUG 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T10:05:31.793+01:00 DEBUG 51736 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T10:05:31.941+01:00 TRACE 51736 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T10:05:31.961+01:00 TRACE 51736 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T10:05:31.962+01:00 TRACE 51736 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T10:05:31.962+01:00 DEBUG 51736 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T10:05:32.233+01:00 DEBUG 51736 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T10:05:32.283+01:00  WARN 51736 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T10:05:32.324+01:00 DEBUG 51736 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T10:05:32.485+01:00  INFO 51736 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 6.26 seconds (process running for 7.086)
+2026-03-28T10:05:33.030+01:00 DEBUG 51736 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6b530eb9, started on Sat Mar 28 10:05:26 WAT 2026
+2026-03-28T10:05:33.043+01:00  INFO 51736 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T10:05:33.049+01:00  INFO 51736 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T10:05:33.062+01:00  INFO 51736 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-28T10:14:55.799+01:00  INFO 53172 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 53172 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T10:14:55.801+01:00  INFO 53172 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T10:14:55.828+01:00 DEBUG 53172 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6b530eb9
+2026-03-28T10:14:56.475+01:00  INFO 53172 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T10:14:56.559+01:00  INFO 53172 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 13 JPA repository interfaces.
+2026-03-28T10:14:57.148+01:00  INFO 53172 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T10:14:57.199+01:00  INFO 53172 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T10:14:57.243+01:00  INFO 53172 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T10:14:57.541+01:00  INFO 53172 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T10:14:57.584+01:00  INFO 53172 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T10:14:57.752+01:00  INFO 53172 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@351d93bd
+2026-03-28T10:14:57.754+01:00  INFO 53172 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T10:14:57.809+01:00  WARN 53172 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T10:14:57.841+01:00  INFO 53172 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T10:14:59.270+01:00  INFO 53172 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T10:14:59.396+01:00  INFO 53172 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T10:14:59.801+01:00  INFO 53172 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T10:15:01.631+01:00  INFO 53172 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T10:15:01.656+01:00  WARN 53172 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T10:15:01.776+01:00  INFO 53172 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T10:15:01.811+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+	{GET [/api/v1/categorie/all]}: allCategories()
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+2026-03-28T10:15:01.821+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+2026-03-28T10:15:01.822+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T10:15:01.825+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+2026-03-28T10:15:01.828+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T10:15:01.832+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T10:15:01.834+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+2026-03-28T10:15:01.837+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T10:15:01.839+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T10:15:01.841+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T10:15:01.845+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T10:15:01.848+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T10:15:01.852+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T10:15:01.858+01:00 TRACE 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T10:15:01.862+01:00 DEBUG 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T10:15:01.883+01:00 DEBUG 53172 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T10:15:02.022+01:00 TRACE 53172 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T10:15:02.037+01:00 TRACE 53172 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T10:15:02.038+01:00 TRACE 53172 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T10:15:02.038+01:00 DEBUG 53172 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T10:15:02.214+01:00 DEBUG 53172 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T10:15:02.256+01:00  WARN 53172 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T10:15:02.288+01:00 DEBUG 53172 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T10:15:02.465+01:00  INFO 53172 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 6.949 seconds (process running for 7.718)
+2026-03-28T10:15:02.921+01:00 DEBUG 53172 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6b530eb9, started on Sat Mar 28 10:14:55 WAT 2026
+2026-03-28T10:15:02.927+01:00  INFO 53172 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T10:15:02.930+01:00  INFO 53172 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T10:15:02.936+01:00  INFO 53172 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-28T10:23:16.598+01:00  INFO 54160 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 54160 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T10:23:16.600+01:00 DEBUG 54160 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Running with Spring Boot v3.5.6, Spring v6.2.11
+2026-03-28T10:23:16.601+01:00  INFO 54160 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T10:23:16.636+01:00 DEBUG 54160 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@678040b3
+2026-03-28T10:23:17.393+01:00  INFO 54160 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T10:23:17.494+01:00  INFO 54160 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 13 JPA repository interfaces.
+2026-03-28T10:23:18.208+01:00  INFO 54160 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T10:23:18.257+01:00  INFO 54160 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T10:23:18.301+01:00  INFO 54160 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T10:23:18.536+01:00  INFO 54160 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T10:23:18.562+01:00  INFO 54160 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T10:23:18.749+01:00  INFO 54160 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bcfe29c
+2026-03-28T10:23:18.752+01:00  INFO 54160 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T10:23:18.811+01:00  WARN 54160 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T10:23:18.839+01:00  INFO 54160 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T10:23:20.045+01:00  INFO 54160 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T10:23:20.156+01:00  INFO 54160 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T10:23:20.571+01:00  INFO 54160 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T10:23:22.345+01:00  INFO 54160 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T10:23:22.372+01:00  WARN 54160 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T10:23:22.505+01:00  INFO 54160 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T10:23:22.546+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+	{GET [/api/v1/categorie/all]}: allCategories()
+2026-03-28T10:23:22.555+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+2026-03-28T10:23:22.557+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T10:23:22.560+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+2026-03-28T10:23:22.566+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T10:23:22.572+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T10:23:22.575+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+2026-03-28T10:23:22.579+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T10:23:22.581+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T10:23:22.584+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T10:23:22.587+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T10:23:22.591+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T10:23:22.595+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T10:23:22.603+01:00 TRACE 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T10:23:22.608+01:00 DEBUG 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T10:23:22.626+01:00 DEBUG 54160 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T10:23:22.767+01:00 TRACE 54160 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T10:23:22.784+01:00 TRACE 54160 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T10:23:22.785+01:00 TRACE 54160 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T10:23:22.785+01:00 DEBUG 54160 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T10:23:22.977+01:00 DEBUG 54160 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T10:23:23.019+01:00  WARN 54160 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T10:23:23.049+01:00 DEBUG 54160 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T10:23:23.213+01:00  INFO 54160 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 6.966 seconds (process running for 7.824)
+2026-03-28T10:23:23.648+01:00 DEBUG 54160 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@678040b3, started on Sat Mar 28 10:23:16 WAT 2026
+2026-03-28T10:23:23.655+01:00  INFO 54160 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T10:23:23.658+01:00  INFO 54160 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T10:23:23.665+01:00  INFO 54160 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-28T11:22:54.723+01:00  INFO 58831 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 58831 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T11:22:54.725+01:00 DEBUG 58831 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Running with Spring Boot v3.5.6, Spring v6.2.11
+2026-03-28T11:22:54.726+01:00  INFO 58831 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T11:22:54.764+01:00 DEBUG 58831 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@678040b3
+2026-03-28T11:22:55.521+01:00  INFO 58831 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T11:22:55.628+01:00  INFO 58831 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 13 JPA repository interfaces.
+2026-03-28T11:22:56.214+01:00  INFO 58831 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T11:22:56.257+01:00  INFO 58831 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T11:22:56.301+01:00  INFO 58831 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T11:22:56.559+01:00  INFO 58831 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T11:22:56.600+01:00  INFO 58831 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T11:22:56.769+01:00  INFO 58831 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61c5fd78
+2026-03-28T11:22:56.772+01:00  INFO 58831 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T11:22:56.847+01:00  WARN 58831 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T11:22:56.873+01:00  INFO 58831 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T11:22:58.454+01:00  INFO 58831 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T11:22:58.584+01:00  INFO 58831 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:22:58.993+01:00  INFO 58831 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T11:23:00.790+01:00  INFO 58831 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T11:23:00.815+01:00  WARN 58831 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T11:23:00.957+01:00  INFO 58831 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T11:23:01.002+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+	{GET [/api/v1/categorie/all]}: allCategories()
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+2026-03-28T11:23:01.012+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+2026-03-28T11:23:01.014+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T11:23:01.020+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+2026-03-28T11:23:01.024+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T11:23:01.029+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T11:23:01.032+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+2026-03-28T11:23:01.035+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T11:23:01.038+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T11:23:01.043+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T11:23:01.046+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T11:23:01.049+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T11:23:01.052+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T11:23:01.056+01:00 TRACE 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T11:23:01.059+01:00 DEBUG 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T11:23:01.073+01:00 DEBUG 58831 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T11:23:01.218+01:00 TRACE 58831 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T11:23:01.237+01:00 TRACE 58831 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T11:23:01.238+01:00 TRACE 58831 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T11:23:01.238+01:00 DEBUG 58831 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T11:23:01.467+01:00 DEBUG 58831 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T11:23:01.537+01:00  WARN 58831 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T11:23:01.578+01:00 DEBUG 58831 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T11:23:01.818+01:00  INFO 58831 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 7.456 seconds (process running for 8.689)
+2026-03-28T11:23:02.387+01:00 DEBUG 58831 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@678040b3, started on Sat Mar 28 11:22:54 WAT 2026
+2026-03-28T11:23:02.398+01:00  INFO 58831 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:23:02.401+01:00  INFO 58831 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T11:23:02.416+01:00  INFO 58831 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-28T11:24:48.945+01:00  INFO 59344 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 59344 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T11:24:48.947+01:00 DEBUG 59344 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Running with Spring Boot v3.5.6, Spring v6.2.11
+2026-03-28T11:24:48.948+01:00  INFO 59344 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T11:24:48.982+01:00 DEBUG 59344 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@678040b3
+2026-03-28T11:24:49.770+01:00  INFO 59344 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T11:24:49.889+01:00  INFO 59344 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 13 JPA repository interfaces.
+2026-03-28T11:24:50.656+01:00  INFO 59344 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T11:24:50.722+01:00  INFO 59344 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T11:24:50.812+01:00  INFO 59344 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T11:24:51.134+01:00  INFO 59344 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T11:24:51.166+01:00  INFO 59344 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T11:24:51.347+01:00  INFO 59344 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bcfe29c
+2026-03-28T11:24:51.350+01:00  INFO 59344 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T11:24:51.435+01:00  WARN 59344 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T11:24:51.469+01:00  INFO 59344 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T11:24:52.870+01:00  INFO 59344 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T11:24:53.003+01:00  INFO 59344 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:24:53.557+01:00  INFO 59344 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T11:24:55.353+01:00  INFO 59344 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T11:24:55.373+01:00  WARN 59344 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T11:24:55.492+01:00  INFO 59344 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T11:24:55.525+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+	{GET [/api/v1/categorie/all]}: allCategories()
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+2026-03-28T11:24:55.533+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+2026-03-28T11:24:55.535+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T11:24:55.537+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+2026-03-28T11:24:55.541+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T11:24:55.546+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T11:24:55.549+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+2026-03-28T11:24:55.552+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T11:24:55.555+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T11:24:55.558+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T11:24:55.561+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T11:24:55.563+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T11:24:55.566+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T11:24:55.570+01:00 TRACE 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T11:24:55.572+01:00 DEBUG 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T11:24:55.582+01:00 DEBUG 59344 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T11:24:55.694+01:00 TRACE 59344 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T11:24:55.708+01:00 TRACE 59344 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T11:24:55.709+01:00 TRACE 59344 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T11:24:55.709+01:00 DEBUG 59344 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T11:24:55.895+01:00 DEBUG 59344 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T11:24:55.947+01:00  WARN 59344 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T11:24:55.976+01:00 DEBUG 59344 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T11:24:56.138+01:00  INFO 59344 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 7.523 seconds (process running for 8.542)
+2026-03-28T11:24:56.538+01:00 DEBUG 59344 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@678040b3, started on Sat Mar 28 11:24:48 WAT 2026
+2026-03-28T11:24:56.546+01:00  INFO 59344 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:24:56.550+01:00  INFO 59344 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T11:24:56.557+01:00  INFO 59344 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-28T11:26:25.844+01:00  INFO 59794 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 59794 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T11:26:25.846+01:00  INFO 59794 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T11:26:25.882+01:00 DEBUG 59794 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6b530eb9
+2026-03-28T11:26:27.127+01:00  INFO 59794 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T11:26:27.245+01:00  INFO 59794 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 13 JPA repository interfaces.
+2026-03-28T11:26:27.922+01:00  INFO 59794 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T11:26:27.958+01:00  INFO 59794 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T11:26:28.004+01:00  INFO 59794 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T11:26:28.216+01:00  INFO 59794 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T11:26:28.243+01:00  INFO 59794 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T11:26:28.390+01:00  INFO 59794 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19ec5357
+2026-03-28T11:26:28.392+01:00  INFO 59794 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T11:26:28.435+01:00  WARN 59794 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T11:26:28.457+01:00  INFO 59794 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T11:26:29.484+01:00  INFO 59794 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T11:26:29.583+01:00  INFO 59794 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:26:30.071+01:00  INFO 59794 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T11:26:31.814+01:00  INFO 59794 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T11:26:31.841+01:00  WARN 59794 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T11:26:31.971+01:00  INFO 59794 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T11:26:32.004+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+	{GET [/api/v1/categorie/all]}: allCategories()
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+2026-03-28T11:26:32.013+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+2026-03-28T11:26:32.015+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T11:26:32.017+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+2026-03-28T11:26:32.020+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T11:26:32.026+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T11:26:32.028+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+2026-03-28T11:26:32.032+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T11:26:32.035+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T11:26:32.038+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T11:26:32.041+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T11:26:32.043+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T11:26:32.046+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T11:26:32.052+01:00 TRACE 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T11:26:32.056+01:00 DEBUG 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T11:26:32.077+01:00 DEBUG 59794 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T11:26:32.195+01:00 TRACE 59794 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T11:26:32.208+01:00 TRACE 59794 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T11:26:32.209+01:00 TRACE 59794 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T11:26:32.209+01:00 DEBUG 59794 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T11:26:32.398+01:00 DEBUG 59794 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T11:26:32.444+01:00  WARN 59794 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T11:26:32.477+01:00 DEBUG 59794 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T11:26:32.640+01:00  INFO 59794 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 7.179 seconds (process running for 8.074)
+2026-03-28T11:26:33.088+01:00 DEBUG 59794 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6b530eb9, started on Sat Mar 28 11:26:25 WAT 2026
+2026-03-28T11:26:33.096+01:00  INFO 59794 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:26:33.100+01:00  INFO 59794 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T11:26:33.107+01:00  INFO 59794 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-28T11:29:00.181+01:00  INFO 60366 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 60366 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T11:29:00.184+01:00  INFO 60366 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T11:29:00.217+01:00 DEBUG 60366 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6b530eb9
+2026-03-28T11:29:00.959+01:00  INFO 60366 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T11:29:01.079+01:00  INFO 60366 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 13 JPA repository interfaces.
+2026-03-28T11:29:01.817+01:00  INFO 60366 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T11:29:01.867+01:00  INFO 60366 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T11:29:01.934+01:00  INFO 60366 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T11:29:02.241+01:00  INFO 60366 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T11:29:02.275+01:00  INFO 60366 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T11:29:02.434+01:00  INFO 60366 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bcfe29c
+2026-03-28T11:29:02.437+01:00  INFO 60366 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T11:29:02.491+01:00  WARN 60366 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T11:29:02.512+01:00  INFO 60366 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T11:29:03.679+01:00  INFO 60366 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T11:29:03.814+01:00  INFO 60366 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:29:04.213+01:00  INFO 60366 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T11:29:05.950+01:00  INFO 60366 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T11:29:05.971+01:00  WARN 60366 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T11:29:06.093+01:00  INFO 60366 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T11:29:06.130+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+	{GET [/api/v1/categorie/all]}: allCategories()
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+2026-03-28T11:29:06.138+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+2026-03-28T11:29:06.140+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T11:29:06.142+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+2026-03-28T11:29:06.147+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T11:29:06.152+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T11:29:06.155+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+2026-03-28T11:29:06.158+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T11:29:06.161+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T11:29:06.164+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T11:29:06.166+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T11:29:06.169+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T11:29:06.172+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T11:29:06.177+01:00 TRACE 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T11:29:06.180+01:00 DEBUG 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T11:29:06.192+01:00 DEBUG 60366 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T11:29:06.324+01:00 TRACE 60366 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T11:29:06.340+01:00 TRACE 60366 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T11:29:06.341+01:00 TRACE 60366 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T11:29:06.342+01:00 DEBUG 60366 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T11:29:06.558+01:00 DEBUG 60366 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T11:29:06.609+01:00  WARN 60366 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T11:29:06.641+01:00 DEBUG 60366 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T11:29:06.807+01:00  INFO 60366 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 6.996 seconds (process running for 7.905)
+2026-03-28T11:29:07.233+01:00 DEBUG 60366 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6b530eb9, started on Sat Mar 28 11:29:00 WAT 2026
+2026-03-28T11:29:07.241+01:00  INFO 60366 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:29:07.244+01:00  INFO 60366 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T11:29:07.251+01:00  INFO 60366 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-28T11:33:35.598+01:00  INFO 61201 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 61201 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T11:33:35.600+01:00 DEBUG 61201 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Running with Spring Boot v3.5.6, Spring v6.2.11
+2026-03-28T11:33:35.601+01:00  INFO 61201 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T11:33:35.635+01:00 DEBUG 61201 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@678040b3
+2026-03-28T11:33:36.371+01:00  INFO 61201 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T11:33:36.473+01:00  INFO 61201 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 13 JPA repository interfaces.
+2026-03-28T11:33:37.012+01:00  INFO 61201 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T11:33:37.062+01:00  INFO 61201 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T11:33:37.101+01:00  INFO 61201 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T11:33:37.400+01:00  INFO 61201 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T11:33:37.436+01:00  INFO 61201 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T11:33:37.629+01:00  INFO 61201 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@351d93bd
+2026-03-28T11:33:37.632+01:00  INFO 61201 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T11:33:37.706+01:00  WARN 61201 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T11:33:37.744+01:00  INFO 61201 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T11:33:38.946+01:00  INFO 61201 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T11:33:39.088+01:00  INFO 61201 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:33:39.483+01:00  INFO 61201 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T11:33:41.194+01:00  INFO 61201 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T11:33:41.215+01:00  WARN 61201 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T11:33:41.336+01:00  INFO 61201 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T11:33:41.369+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+	{GET [/api/v1/categorie/all]}: allCategories()
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+2026-03-28T11:33:41.378+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+2026-03-28T11:33:41.379+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T11:33:41.382+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+2026-03-28T11:33:41.386+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T11:33:41.391+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T11:33:41.394+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+2026-03-28T11:33:41.398+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T11:33:41.402+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T11:33:41.404+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T11:33:41.407+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T11:33:41.409+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T11:33:41.412+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T11:33:41.417+01:00 TRACE 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T11:33:41.420+01:00 DEBUG 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T11:33:41.439+01:00 DEBUG 61201 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T11:33:41.568+01:00 TRACE 61201 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T11:33:41.587+01:00 TRACE 61201 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T11:33:41.588+01:00 TRACE 61201 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T11:33:41.589+01:00 DEBUG 61201 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T11:33:41.770+01:00 DEBUG 61201 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T11:33:41.813+01:00  WARN 61201 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T11:33:41.843+01:00 DEBUG 61201 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T11:33:42.025+01:00  INFO 61201 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 6.762 seconds (process running for 7.648)
+2026-03-28T11:33:42.480+01:00 DEBUG 61201 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@678040b3, started on Sat Mar 28 11:33:35 WAT 2026
+2026-03-28T11:33:42.490+01:00  INFO 61201 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:33:42.493+01:00  INFO 61201 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T11:33:42.500+01:00  INFO 61201 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-28T11:41:33.860+01:00  INFO 62106 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Starting JwtApplicationTests using Java 17.0.18 with PID 62106 (started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
+2026-03-28T11:41:33.861+01:00 DEBUG 62106 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Running with Spring Boot v3.5.6, Spring v6.2.11
+2026-03-28T11:41:33.862+01:00  INFO 62106 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-03-28T11:41:33.894+01:00 DEBUG 62106 --- [Pharmacies] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@678040b3
+2026-03-28T11:41:34.555+01:00  INFO 62106 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-28T11:41:34.669+01:00  INFO 62106 --- [Pharmacies] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 13 JPA repository interfaces.
+2026-03-28T11:41:35.171+01:00  INFO 62106 --- [Pharmacies] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-28T11:41:35.208+01:00  INFO 62106 --- [Pharmacies] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-03-28T11:41:35.254+01:00  INFO 62106 --- [Pharmacies] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-28T11:41:35.492+01:00  INFO 62106 --- [Pharmacies] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-28T11:41:35.517+01:00  INFO 62106 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-28T11:41:35.668+01:00  INFO 62106 --- [Pharmacies] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bcfe29c
+2026-03-28T11:41:35.670+01:00  INFO 62106 --- [Pharmacies] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-28T11:41:35.721+01:00  WARN 62106 --- [Pharmacies] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-03-28T11:41:35.744+01:00  INFO 62106 --- [Pharmacies] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-28T11:41:36.850+01:00  INFO 62106 --- [Pharmacies] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-28T11:41:36.960+01:00  INFO 62106 --- [Pharmacies] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:41:37.314+01:00  INFO 62106 --- [Pharmacies] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-28T11:41:38.815+01:00  INFO 62106 --- [Pharmacies] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-03-28T11:41:38.835+01:00  WARN 62106 --- [Pharmacies] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-28T11:41:38.947+01:00  INFO 62106 --- [Pharmacies] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-03-28T11:41:38.980+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CategorieController:
+	{GET [/api/v1/categorie/all]}: allCategories()
+	{PUT [/api/v1/categorie/update/{id}]}: updateCategorie(Long,CategorieProduit)
+	{DELETE [/api/v1/categorie/delete/{id}]}: deleteCategorie(Long)
+	{POST [/api/v1/categorie/add]}: addCategorie(CategorieProduit)
+2026-03-28T11:41:38.988+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ClientController:
+	{POST [/api/v1/client/add]}: addClient(Client)
+	{PUT [/api/v1/client/update/{id}]}: updateClient(Long,Client)
+	{DELETE [/api/v1/client/delete/{id}]}: deleteClient(Long)
+	{GET [/api/v1/client/all]}: getAllClients()
+2026-03-28T11:41:38.989+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.CpteTicketsController:
+	{GET [/api/v1/compteurticket]}: generateTk()
+2026-03-28T11:41:38.991+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.DetailsVenteController:
+	{PUT [/api/v1/detailsticket/update/{id}]}: updateDetailsTicket(Long,DetailsVentes)
+	{POST [/api/v1/detailsticket/add]}: addDetailsTicket(DetailsVentes)
+	{DELETE [/api/v1/detailsticket/delete/{id}]}: deleteDetailsTicket(Long)
+	{PUT [/api/v1/detailsticket/disable/{produitId}/{ticketCode}]}: deleteDetailsTicketByProduit(Long,String)
+	{PUT [/api/v1/detailsticket/finaliser/{codeTicket}]}: finaliserTicket(String,FinaliserTicketDTO)
+	{GET [/api/v1/detailsticket/all]}: allDetailsTickets()
+2026-03-28T11:41:38.993+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.EntreeStockController:
+	{GET [/api/v1/entree-stock/search]}: searchEntrees(String,Pageable)
+	{POST [/api/v1/entree-stock/add]}: addEntreeStock(EntreeStock)
+	{GET [/api/v1/entree-stock/all]}: allEntrees()
+	{GET [/api/v1/entree-stock]}: allEntrees(Pageable)
+	{PUT [/api/v1/entree-stock/update/{id}]}: updateEntreeStock(Long,EntreeStock)
+	{DELETE [/api/v1/entree-stock/delete/{id}]}: deleteEntreeStock(Long)
+2026-03-28T11:41:38.998+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.FournisseurController:
+	{POST [/api/v1/fournisseur/add]}: addFournisseur(Fournisseur)
+	{PUT [/api/v1/fournisseur/update/{id}]}: updateFournisseur(Long,Fournisseur)
+	{DELETE [/api/v1/fournisseur/delete/{id}]}: deleteFournisseur(Long)
+	{GET [/api/v1/fournisseur/all]}: allFournisseurs()
+2026-03-28T11:41:38.999+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.MesVenteController:
+	{GET [/api/v1/mesventes/actives]}: getVentesActives(String,Long,String,String,int,int)
+	{GET [/api/v1/mesventes/jour/by-phone/{phone}]}: getVentesDuJourByPhone(String)
+	{POST [/api/v1/mesventes/annuler/{id}]}: annulerVente(Long)
+2026-03-28T11:41:39.002+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.NomProduitController:
+	{GET [/api/v1/nomproduit/all]}: allNomProduits()
+	{POST [/api/v1/nomproduit/add]}: addNomProduit(NomProduit)
+	{PUT [/api/v1/nomproduit/{id}]}: updateNomProduit(Long,NomProduit)
+	{DELETE [/api/v1/nomproduit/{id}]}: deleteNomProduit(Long)
+	{GET [/api/v1/nomproduit/search]}: searchNomProduit(String)
+	{GET [/api/v1/nomproduit/{id}]}: getNomProduit(Long)
+2026-03-28T11:41:39.004+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.PresentationController:
+	{POST [/api/v1/presentation/add]}: create(Presentation)
+	{GET [/api/v1/presentation/all]}: getAll()
+	{PUT [/api/v1/presentation/{id}]}: updatePresentation(Long,Presentation)
+	{DELETE [/api/v1/presentation/{id}]}: deletePresentation(Long)
+2026-03-28T11:41:39.006+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.ProduitController:
+	{POST [/api/v1/produit/add]}: addProduit(Produit)
+	{PUT [/api/v1/produit/update/{id}]}: updateProduit(Long,Produit)
+	{DELETE [/api/v1/produit/delete/{id}]}: deleteProduit(Long)
+	{GET [/api/v1/produit/search]}: searchProduits(String,Pageable)
+	{GET [/api/v1/produit/all]}: allProduits()
+	{GET [/api/v1/produit]}: allProduits(Pageable)
+	{GET [/api/v1/produit/stats/{produitId}]}: getProduitStats(Long)
+2026-03-28T11:41:39.007+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.RecuPdfController:
+	{GET [/api/v1/tickets/{codeTicket}/pdf]}: getOrCreatePdf(String)
+	{GET [/api/v1/tickets/recu/all]}: getAllRecus(int,int)
+	{DELETE [/api/v1/tickets/recu/{codeTicket}]}: deleteRecu(String)
+2026-03-28T11:41:39.009+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.UserController:
+	{POST [/api/v1/users/auth/login]}: login(Map,HttpServletRequest)
+	{POST [/api/v1/users]}: addUser(AppUser)
+	{POST [/api/v1/users/roles]}: addRole(AppRole)
+	{PUT [/api/v1/users/{telephone}]}: updateUser(String,AppUser)
+	{POST [/api/v1/users/auth/change-password]}: changePassword(Map)
+	{GET [/api/v1/users]}: getAllUsers()
+	{POST [/api/v1/users/addRoleToUser]}: addRoleToUser(UserToRole)
+2026-03-28T11:41:39.011+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.g.i.c.VenteController:
+	{PUT [/api/v1/ticket/update/{id}]}: updateTicket(Long,Vente)
+	{DELETE [/api/v1/ticket/delete/{id}]}: deleteTicket(Long)
+	{POST [/api/v1/ticket/create]}: createTicket(VenteCreateDTO)
+	{GET [/api/v1/ticket/all]}: allTickets()
+	{GET [/api/v1/ticket]}: allTickets(Pageable)
+	{GET [/api/v1/ticket/find/{code}]}: findByCode(String)
+2026-03-28T11:41:39.016+01:00 TRACE 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2026-03-28T11:41:39.019+01:00 DEBUG 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2026-03-28T11:41:39.034+01:00 DEBUG 62106 --- [Pharmacies] [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2026-03-28T11:41:39.138+01:00 TRACE 62106 --- [Pharmacies] [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2026-03-28T11:41:39.152+01:00 TRACE 62106 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-28T11:41:39.152+01:00 TRACE 62106 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-03-28T11:41:39.152+01:00 DEBUG 62106 --- [Pharmacies] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-03-28T11:41:39.333+01:00 DEBUG 62106 --- [Pharmacies] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-28T11:41:39.375+01:00  WARN 62106 --- [Pharmacies] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-03-28T11:41:39.413+01:00 DEBUG 62106 --- [Pharmacies] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-28T11:41:39.562+01:00  INFO 62106 --- [Pharmacies] [main] c.gestion.invoice.JwtApplicationTests    : Started JwtApplicationTests in 6.042 seconds (process running for 6.931)
+2026-03-28T11:41:39.936+01:00 DEBUG 62106 --- [Pharmacies] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@678040b3, started on Sat Mar 28 11:41:33 WAT 2026
+2026-03-28T11:41:39.945+01:00  INFO 62106 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-28T11:41:39.948+01:00  INFO 62106 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-28T11:41:39.954+01:00  INFO 62106 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

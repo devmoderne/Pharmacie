@@ -1,0 +1,128 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Style pour la section du patient */
+#reference {
+  background-color: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Style des libellés */
+#reference label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  display: block;
+  margin: 8px 0;
+}
+
+/* Style des valeurs de données */
+#reference .data-value {
+  font-size: 14px;
+  font-weight: 400;
+  color: #007bff;
+  padding: 5px 8px;
+  background-color: #e9f4fe;
+  border-radius: 5px;
+}
+
+/* Couleurs et style spécifiques pour les informations manquantes */
+#reference .missing-data {
+  color: #ff6347; /* Tomate */
+  background-color: #ffe4e1; /* Pêche clair */
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+/* Style pour les sous-titres */
+#reference .subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.loading-message {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
