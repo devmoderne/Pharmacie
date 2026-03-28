@@ -33,9 +33,12 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             try {
                 String token = header.substring(7);
                 Algorithm algorithm = Algorithm.HMAC256(secret.getBytes());
-                JWTVerifier verifier = JWT.require(algorithm).build();
-                DecodedJWT decodedJWT = verifier.verify(token);
+                JWTVerifier verifier = JWT.require(algorithm)
+                        .acceptLeeway(1) // petite tolérance si horloge différente
+                        .build();
+                DecodedJWT decodedJWT = verifier.verify(token); // vérifie expiration ici automatiquement
 
+                // Si le token est expiré, une exception JWTExpiredException sera lancée
                 String telephone = decodedJWT.getSubject();
                 List<String> roles = decodedJWT.getClaim("roles").asList(String.class);
 
@@ -51,9 +54,13 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
                 SecurityContextHolder.getContext().setAuthentication(authToken);
 
+            } catch (com.auth0.jwt.exceptions.TokenExpiredException e) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // ← ici 401
+                response.getWriter().write("Token expiré, veuillez vous reconnecter.");
+                return;
             } catch (Exception e) {
-                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                response.getWriter().write("Erreur JWT : " + e.getMessage());
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 pour tous les autres cas
+                response.getWriter().write("Token invalide : " + e.getMessage());
                 return;
             }
         }
