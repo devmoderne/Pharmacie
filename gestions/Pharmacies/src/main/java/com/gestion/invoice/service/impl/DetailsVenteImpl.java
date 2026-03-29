@@ -9,7 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+<<<<<<< HEAD
 import java.time.LocalDate;
+=======
+>>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -446,10 +449,13 @@ public Vente finaliserTicket(String codeTicket, double tva, double remise, doubl
                 .sum();
     }
 
+<<<<<<< HEAD
     @Override
     public  List<Vente> getVentesEntreDates(LocalDate debut, LocalDate fin) {
       return null;
     }
 
+=======
+>>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
 
 }

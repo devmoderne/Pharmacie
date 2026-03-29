@@ -1191,6 +1191,7 @@
 2026-03-28T11:41:39.945+01:00  INFO 62106 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-03-28T11:41:39.948+01:00  INFO 62106 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-03-28T11:41:39.954+01:00  INFO 62106 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+<<<<<<< HEAD
 2026-03-28T20:37:03.756+01:00  INFO 39725 --- [Pharmacies] [restartedMain] c.gestion.invoice.PharmaciesApplication  : Starting PharmaciesApplication using Java 17.0.18 with PID 39725 (/home/thierry/Clients/fullstock/gestions/Pharmacies/target/classes started by thierry in /home/thierry/Clients/fullstock/gestions/Pharmacies)
 2026-03-28T20:37:03.761+01:00 DEBUG 39725 --- [Pharmacies] [restartedMain] c.gestion.invoice.PharmaciesApplication  : Running with Spring Boot v3.5.6, Spring v6.2.11
 2026-03-28T20:37:03.763+01:00  INFO 39725 --- [Pharmacies] [restartedMain] c.gestion.invoice.PharmaciesApplication  : No active profile set, falling back to 1 default profile: "default"
@@ -10244,3 +10245,5 @@
 2026-03-28T23:53:02.631+01:00  INFO 16607 --- [Pharmacies] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-03-28T23:53:02.635+01:00  INFO 16607 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-03-28T23:53:02.644+01:00  INFO 16607 --- [Pharmacies] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+=======
+>>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8

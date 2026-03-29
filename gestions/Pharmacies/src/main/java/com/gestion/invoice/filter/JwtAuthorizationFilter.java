@@ -33,12 +33,18 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             try {
                 String token = header.substring(7);
                 Algorithm algorithm = Algorithm.HMAC256(secret.getBytes());
+<<<<<<< HEAD
                 JWTVerifier verifier = JWT.require(algorithm)
                         .acceptLeeway(1) // petite tolérance si horloge différente
                         .build();
                 DecodedJWT decodedJWT = verifier.verify(token); // vérifie expiration ici automatiquement
 
                 // Si le token est expiré, une exception JWTExpiredException sera lancée
+=======
+                JWTVerifier verifier = JWT.require(algorithm).build();
+                DecodedJWT decodedJWT = verifier.verify(token);
+
+>>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
                 String telephone = decodedJWT.getSubject();
                 List<String> roles = decodedJWT.getClaim("roles").asList(String.class);
 
@@ -54,6 +60,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
                 SecurityContextHolder.getContext().setAuthentication(authToken);
 
+<<<<<<< HEAD
             } catch (com.auth0.jwt.exceptions.TokenExpiredException e) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // ← ici 401
                 response.getWriter().write("Token expiré, veuillez vous reconnecter.");
@@ -61,6 +68,11 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             } catch (Exception e) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 pour tous les autres cas
                 response.getWriter().write("Token invalide : " + e.getMessage());
+=======
+            } catch (Exception e) {
+                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                response.getWriter().write("Erreur JWT : " + e.getMessage());
+>>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
                 return;
             }
         }

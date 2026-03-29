@@ -34,6 +34,7 @@ public class VenteController {
     public ResponseEntity<Page<Vente>> allTickets(Pageable pageable) {
         return ResponseEntity.ok(venteService.allTicket(pageable));
     }
+<<<<<<< HEAD
     /*@GetMapping("/all")
     public ResponseEntity<List<Vente>> allTickets(
             @RequestParam(required = false) String startDate,
@@ -42,6 +43,8 @@ public class VenteController {
         List<Vente> ventes = venteService.allTicket(startDate, endDate);
         return ResponseEntity.ok(ventes);
     }*/
+=======
+>>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
 
 
     @PutMapping("/update/{id}")

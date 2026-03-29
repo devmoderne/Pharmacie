@@ -28,10 +28,14 @@ const MesVentesTable = () => {
 
 const fetchVentes = async () => {
   try {
+<<<<<<< HEAD
     const res = await MesventeService.get({ page: 0, size: 1000 });
     
     
     // pagination
+=======
+    const res = await MesventeService.get({ page: 0, size: 50 }); // pagination
+>>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
     const ventesArray = res.content; // ← ici !
     const sorted = ventesArray.sort(
       (a, b) => new Date(b.dateVente) - new Date(a.dateVente)
