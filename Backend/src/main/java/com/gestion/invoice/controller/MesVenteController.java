@@ -25,21 +25,13 @@ public class MesVenteController {
         this.venteRepository = venteRepository;
     }
 
-<<<<<<<< HEAD:Backend/src/main/java/MesVenteController.java
-========
     // Récupère les ventes actives avec filtres optionnels
->>>>>>>> cb5b798 (correction du backend):Backend/src/main/java/com/gestion/invoice/controller/MesVenteController.java
     @GetMapping("/actives")
     public ResponseEntity<Page<Vente>> getVentesActives(
             @RequestParam(required = false) String client,
             @RequestParam(required = false) Long userId,
-<<<<<<<< HEAD:Backend/src/main/java/MesVenteController.java
             @RequestParam(required = false) String startDate,
             @RequestParam(required = false) String endDate,
-========
-            @RequestParam(required = false) String startDate, // format "YYYY-MM-DD"
-            @RequestParam(required = false) String endDate,   // format "YYYY-MM-DD"
->>>>>>>> cb5b798 (correction du backend):Backend/src/main/java/com/gestion/invoice/controller/MesVenteController.java
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "1000") int size
     ) {
@@ -53,17 +45,10 @@ public class MesVenteController {
             }
             if (endDate != null && !endDate.isEmpty()) {
                 LocalDate end = LocalDate.parse(endDate);
-<<<<<<<< HEAD:Backend/src/main/java/MesVenteController.java
                 endDateTime = end.atTime(23, 59, 59, 999_999_999);
             }
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
-========
-                endDateTime = end.atTime(23, 59, 59, 999_999_999); // fin de journée
-            }
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().build(); // format date invalide
->>>>>>>> cb5b798 (correction du backend):Backend/src/main/java/com/gestion/invoice/controller/MesVenteController.java
         }
 
         Pageable pageable = PageRequest.of(page, size);
@@ -71,19 +56,13 @@ public class MesVenteController {
         return ResponseEntity.ok(ventes);
     }
 
-<<<<<<<< HEAD:Backend/src/main/java/MesVenteController.java
-========
     // Récupère les ventes du jour par téléphone
->>>>>>>> cb5b798 (correction du backend):Backend/src/main/java/com/gestion/invoice/controller/MesVenteController.java
     @GetMapping("/jour/by-phone/{phone}")
     public List<Vente> getVentesDuJourByPhone(@PathVariable String phone) {
         return venteService.getVentesDuJourByUser(phone);
     }
 
-<<<<<<<< HEAD:Backend/src/main/java/MesVenteController.java
-========
     // Annuler une vente
->>>>>>>> cb5b798 (correction du backend):Backend/src/main/java/com/gestion/invoice/controller/MesVenteController.java
     @PostMapping("/annuler/{id}")
     public ResponseEntity<String> annulerVente(@PathVariable Long id) {
         Vente v = venteRepository.findById(id).orElseThrow();
