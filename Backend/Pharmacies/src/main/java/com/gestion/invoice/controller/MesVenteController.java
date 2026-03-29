@@ -3,34 +3,26 @@ package com.gestion.invoice.controller;
 import com.gestion.invoice.models.Vente;
 import com.gestion.invoice.repository.VenteRepository;
 import com.gestion.invoice.service.VenteService;
-<<<<<<< HEAD
-=======
 import org.springframework.beans.factory.annotation.Autowired;
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-=======
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
 import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/mesventes")
-<<<<<<< HEAD
 public class MesVenteController {
 
     private final VenteService venteService;
     private final VenteRepository venteRepository;
-=======
 
 public class MesVenteController {
     private final VenteService venteService;
@@ -38,22 +30,17 @@ public class MesVenteController {
     private  final VenteRepository venteRepository;
 
 
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
 
     public MesVenteController(VenteService venteService, VenteRepository venteRepository) {
         this.venteService = venteService;
         this.venteRepository = venteRepository;
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
     @GetMapping("/actives")
     public ResponseEntity<Page<Vente>> getVentesActives(
             @RequestParam(required = false) String client,
             @RequestParam(required = false) Long userId,
-<<<<<<< HEAD
             @RequestParam(required = false) String startDate, // "YYYY-MM-DD"
             @RequestParam(required = false) String endDate,   // "YYYY-MM-DD"
             @RequestParam(defaultValue = "0") int page,
@@ -82,7 +69,6 @@ public class MesVenteController {
         return ResponseEntity.ok(ventes);
     }
 
-=======
             @RequestParam(required = false) String startDate,
             @RequestParam(required = false) String endDate,
             @RequestParam(defaultValue = "0") int page,  // page actuelle
@@ -96,14 +82,11 @@ public class MesVenteController {
 
         return ResponseEntity.ok(ventes);
     }
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
     @GetMapping("/jour/by-phone/{phone}")
     public List<Vente> getVentesDuJourByPhone(@PathVariable String phone) {
         return venteService.getVentesDuJourByUser(phone);
     }
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -114,7 +97,6 @@ public class MesVenteController {
         return venteService.getVentesDuJourByPhone(phone);
     }*/
 
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
     @PostMapping("/annuler/{id}")
     public ResponseEntity<String> annulerVente(@PathVariable Long id) {
         Vente v = venteRepository.findById(id).orElseThrow();
@@ -122,8 +104,5 @@ public class MesVenteController {
         venteRepository.save(v);
         return ResponseEntity.ok("Vente annulée");
     }
-<<<<<<< HEAD
 }
-=======
 }
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8

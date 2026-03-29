@@ -16,11 +16,9 @@ const MesVentesTable = () => {
   const [pdfUrl, setPdfUrl] = useState('');
   const [showModal, setShowModal] = useState(false);
 
-  /* ================= PAGINATION MOIS ================= */
   const [currentMonthPage, setCurrentMonthPage] = useState(0);
   const monthsPerPage = 3; // nombre de mois par page
 
-  /* ================= LOAD DATA ================= */
   useEffect(() => {
     fetchVentes();
     fetchUsers();
@@ -28,14 +26,11 @@ const MesVentesTable = () => {
 
 const fetchVentes = async () => {
   try {
-<<<<<<< HEAD
     const res = await MesventeService.get({ page: 0, size: 1000 });
     
     
     // pagination
-=======
-    const res = await MesventeService.get({ page: 0, size: 50 }); // pagination
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
+
     const ventesArray = res.content; // ← ici !
     const sorted = ventesArray.sort(
       (a, b) => new Date(b.dateVente) - new Date(a.dateVente)
@@ -55,13 +50,11 @@ const fetchVentes = async () => {
     }
   };
 
-  /* ================= DEBOUNCE CLIENT ================= */
   useEffect(() => {
     const t = setTimeout(() => setDebouncedClient(clientFilter), 400);
     return () => clearTimeout(t);
   }, [clientFilter]);
 
-  /* ================= FILTER ================= */
   const filteredVentes = useMemo(() => {
     return ventes.filter(v => {
       const clientOk =
@@ -82,7 +75,6 @@ const fetchVentes = async () => {
     });
   }, [ventes, debouncedClient, userFilter, startDate, endDate]);
 
-  /* ================= GROUP BY MONTH ================= */
   const ventesParMois = useMemo(() => {
   const map = filteredVentes.reduce((acc, v) => {
     const date = new Date(v.dateVente);
@@ -98,13 +90,11 @@ const fetchVentes = async () => {
     .map(([key, { label, ventes }]) => [label, ventes]);
 }, [filteredVentes]);
 
-  /* ================= PAGINATION DES MOIS ================= */
   const paginatedVentesParMois = useMemo(() => {
     const startIndex = currentMonthPage * monthsPerPage;
     return ventesParMois.slice(startIndex, startIndex + monthsPerPage);
   }, [ventesParMois, currentMonthPage]);
 
-  /* ================= TOTALS ================= */
   const totalMois = list => ({
     vente: list.reduce((a, v) => a + (v.total || 0), 0),
     benefice: list.reduce((a, v) => a + Math.abs(v.benefice || 0), 0)
@@ -117,7 +107,6 @@ const fetchVentes = async () => {
     (a, v) => a + Math.abs(v.benefice || 0), 0
   );
 
-  /* ================= ACTIONS ================= */
   const handlePrint = async (codeTicket) => {
     const url = await recuService.getPdfTicket(codeTicket);
     setPdfUrl(url);
@@ -130,7 +119,6 @@ const fetchVentes = async () => {
     setVentes(prev => prev.filter(v => v.id !== vente.id));
   };
 
-  /* ================= RENDER ================= */
   return (
     <div className="p-4 space-y-4">
       <h2 className="text-2xl font-bold">📊 Mes Ventes</h2>

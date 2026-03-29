@@ -19,10 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
 import java.time.LocalDate;
-=======
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -136,7 +133,6 @@ public class VenteImpl implements VenteService {
 
         return venteRepository.saveAndFlush(vente); // 🔥 flush = ID garanti
     }
-<<<<<<< HEAD
     @Override
     public List<Vente> allTicket(String startDate, String endDate) {
         if (startDate != null && endDate != null) {
@@ -146,8 +142,6 @@ public class VenteImpl implements VenteService {
         }
         return venteRepository.findAll();
     }
-=======
 
 
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
 }
