@@ -28,36 +28,35 @@
     "react-to-print": "^3.1.0",
     "react-toastify": "^11.0.5",
     "slick-carousel": "^1.8.1",
-<<<<<<< HEAD
-=======
+
     "tailwindcss": "^3.0.0",
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
+
     "written-number": "^0.11.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
-<<<<<<< HEAD
+
     "@tailwindcss/postcss": "^4.2.2",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.4.27",
-=======
+
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.4.21",
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
+
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-<<<<<<< HEAD
+
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
-=======
+
     "postcss": "^8.5.3",
->>>>>>> a45223998defebbae8d29fde1e3be01e5f3c73f8
+
     "vite": "^6.4.1"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
