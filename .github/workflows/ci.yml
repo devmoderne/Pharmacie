@@ -1,0 +1,40 @@
+name: CI Build
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 20
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Build Frontend
+        working-directory: Front
+        run: |
+          npm install
+          npm run build
+
+      - name: Copy frontend build to backend
+        run: |
+          cp -r Front/dist/* Backend/Pharmacies/src/main/resources/static/
+
+      - name: Build Backend
+        working-directory: Backend/Pharmacies
+        run: mvn clean install -DskipTests

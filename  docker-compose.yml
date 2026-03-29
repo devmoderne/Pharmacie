@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+
+  db:
+    build: ./db
+    container_name: dbvente
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  backend:
+    build: ./Backend/Pharmacies
+    container_name: backend
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/dbvente
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./Front
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  db_data:
