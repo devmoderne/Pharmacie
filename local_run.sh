@@ -8,11 +8,11 @@ npm install
 npm run build || { echo "Build Front failed"; exit 1; }
 
 echo "=== Copier le build dans le backend ==="
-rm -rf ../Backend/Pharmacies/src/main/resources/static/*
-cp -r dist/* ../Backend/Pharmacies/src/main/resources/static/
+rm -rf ../Backend/src/main/resources/static/*
+cp -r dist/* ../Backend/src/main/resources/static/
 
 echo "=== Build Backend Spring Boot ==="
-cd ../Backend/Pharmacies || { echo "Backend folder not found"; exit 1; }
+cd ../Backend || { echo "Backend folder not found"; exit 1; }
 ./mvnw clean install || { echo "Build Backend failed"; exit 1; }
 
 echo "=== Lancer le Backend ==="

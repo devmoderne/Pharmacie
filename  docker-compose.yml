@@ -11,7 +11,7 @@ services:
       - db_data:/var/lib/mysql
 
   backend:
-    build: ./Backend/Pharmacies
+    build: ./Backend
     container_name: backend
     depends_on:
       - db
