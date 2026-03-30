@@ -9,7 +9,7 @@ services:
       MYSQL_ROOT_PASSWORD: ""   # mot de passe vide
       MYSQL_DATABASE: dbvente
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
 
@@ -23,7 +23,7 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ""   # mot de passe vide
     ports:
-      - "8080:8080"
+      - "8081:8080"
 
   frontend:
     build: ./Front
@@ -31,7 +31,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "80:80"
+      - "3000:80"
 
 volumes:
   db_data:
