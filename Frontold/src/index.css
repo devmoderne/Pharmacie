@@ -1,0 +1,6 @@
+/* Font Awesome */
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+/* Tailwind v4 */
+@import "tailwindcss/preflight"; /* remplace @tailwind base */
+@import "tailwindcss/utilities";  /* remplace @tailwind components + utilities */

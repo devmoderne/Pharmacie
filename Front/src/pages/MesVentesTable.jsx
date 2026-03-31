@@ -16,30 +16,34 @@ const MesVentesTable = () => {
   const [pdfUrl, setPdfUrl] = useState('');
   const [showModal, setShowModal] = useState(false);
 
-  const [currentMonthPage, setCurrentMonthPage] = useState(0);
-  const monthsPerPage = 3; // nombre de mois par page
+  const [currentPage, setCurrentPage] = useState(0);
+  const moisPerPage = 1; // 1 mois par page
 
   useEffect(() => {
     fetchVentes();
     fetchUsers();
   }, []);
 
-const fetchVentes = async () => {
-  try {
-    const res = await MesventeService.get({ page: 0, size: 1000 });
-    
-    
-    // pagination
-
-    const ventesArray = res.content; // ← ici !
-    const sorted = ventesArray.sort(
-      (a, b) => new Date(b.dateVente) - new Date(a.dateVente)
-    );
-    setVentes(sorted);
-  } catch (e) {
-    console.error(e);
-  }
-};
+  const fetchVentes = async () => {
+    try {
+      const res = await MesventeService.get({ page: 0, size: 10000 });
+        console.log("🔥 Ventes reçues du backend :", res.content);
+        console.log(
+  "🔥 Ventes novembre et décembre :",
+  res.content.filter(v => {
+    const m = new Date(v.dateVente).getMonth() + 1;
+    return m === 11 || m === 12;
+  })
+);
+      const sorted = res.content.sort(
+        (a, b) => new Date(b.dateVente) - new Date(a.dateVente)
+      );
+      setVentes(sorted);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  
 
   const fetchUsers = async () => {
     try {
@@ -75,53 +79,80 @@ const fetchVentes = async () => {
     });
   }, [ventes, debouncedClient, userFilter, startDate, endDate]);
 
-  const ventesParMois = useMemo(() => {
-  const map = filteredVentes.reduce((acc, v) => {
-    const date = new Date(v.dateVente);
-    const key = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`; // 2026-02
-    if (!acc[key]) acc[key] = { label: date.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }), ventes: [] };
-    acc[key].ventes.push(v);
-    return acc;
-  }, {});
-  
-  // Transformer en tableau et trier par mois descendant
-  return Object.entries(map)
-    .sort(([a], [b]) => new Date(b + '-01') - new Date(a + '-01'))  // ISO pour tri correct
-    .map(([key, { label, ventes }]) => [label, ventes]);
-}, [filteredVentes]);
+  // GROUPER PAR MOIS
+  const groupedByMonth = useMemo(() => {
+    const map = filteredVentes.reduce((acc, v) => {
+      const date = new Date(v.dateVente);
+      const key = `${date.getFullYear()}-${String(
+        date.getMonth() + 1
+      ).padStart(2, '0')}`;
 
-  const paginatedVentesParMois = useMemo(() => {
-    const startIndex = currentMonthPage * monthsPerPage;
-    return ventesParMois.slice(startIndex, startIndex + monthsPerPage);
-  }, [ventesParMois, currentMonthPage]);
+      if (!acc[key]) {
+        acc[key] = {
+          label: new Intl.DateTimeFormat('fr-FR', {
+            month: 'long',
+            year: 'numeric'
+          }).format(date),
+          ventes: []
+        };
+      }
+
+      acc[key].ventes.push(v);
+      return acc;
+    }, {});
+
+    return Object.values(map).sort(
+      (a, b) =>
+        new Date(b.ventes[0].dateVente) -
+        new Date(a.ventes[0].dateVente)
+    );
+  }, [filteredVentes]);
+
+  // PAGINATION PAR MOIS
+  const paginatedMonths = useMemo(() => {
+    const start = currentPage * moisPerPage;
+    const end = start + moisPerPage;
+    return groupedByMonth.slice(start, end);
+  }, [groupedByMonth, currentPage]);
 
   const totalMois = list => ({
     vente: list.reduce((a, v) => a + (v.total || 0), 0),
     benefice: list.reduce((a, v) => a + Math.abs(v.benefice || 0), 0)
   });
 
-  const totalGlobalVente = filteredVentes.reduce(
-    (a, v) => a + (v.total || 0), 0
-  );
-  const totalGlobalBenefice = filteredVentes.reduce(
-    (a, v) => a + Math.abs(v.benefice || 0), 0
-  );
-
-  const handlePrint = async (codeTicket) => {
+  const handlePrint = async codeTicket => {
     const url = await recuService.getPdfTicket(codeTicket);
     setPdfUrl(url);
     setShowModal(true);
   };
 
-  const handleAnnuler = async (vente) => {
+  const handleAnnuler = async vente => {
     if (!window.confirm(`Annuler le ticket ${vente.codeTicket} ?`)) return;
     await MesventeService.deleteOne(vente.id);
     setVentes(prev => prev.filter(v => v.id !== vente.id));
   };
+  const totalAnnee = useMemo(() => {
+  return {
+    vente: filteredVentes.reduce((a, v) => a + (v.total || 0), 0),
+    benefice: filteredVentes.reduce(
+      (a, v) => a + Math.abs(v.benefice || 0),
+      0
+    )
+  };
+}, [filteredVentes]);
 
   return (
     <div className="p-4 space-y-4">
       <h2 className="text-2xl font-bold">📊 Mes Ventes</h2>
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 flex justify-between font-bold text-lg">
+  <span>
+    💰 Total ventes : {totalAnnee.vente.toLocaleString()} FCFA
+  </span>
+
+  <span>
+    📈 Bénéfice : {totalAnnee.benefice.toLocaleString()} FCFA
+  </span>
+</div>
 
       {/* FILTERS */}
       <div className="flex flex-wrap gap-2">
@@ -131,6 +162,7 @@ const fetchVentes = async () => {
           value={clientFilter}
           onChange={e => setClientFilter(e.target.value)}
         />
+
         <select
           className="input input-bordered"
           value={userFilter}
@@ -141,18 +173,33 @@ const fetchVentes = async () => {
             <option key={u.id} value={u.id}>{u.nom}</option>
           ))}
         </select>
+
         <input type="date" className="input input-bordered"
-          value={startDate} onChange={e => setStartDate(e.target.value)} />
+          value={startDate}
+          onChange={e => setStartDate(e.target.value)}
+        />
+
         <input type="date" className="input input-bordered"
-          value={endDate} onChange={e => setEndDate(e.target.value)} />
+          value={endDate}
+          onChange={e => setEndDate(e.target.value)}
+        />
       </div>
 
-      {/* MONTHS */}
-      {paginatedVentesParMois.map(([mois, list]) => {
-        const t = totalMois(list);
+      {/* TABLE */}
+      {paginatedMonths.map((monthData, index) => {
+        const t = totalMois(monthData.ventes);
+
         return (
-          <div key={mois} className="bg-white rounded shadow p-3">
-            <h3 className="font-bold text-lg mb-2">📅 {mois.toUpperCase()}</h3>
+          <div key={index} className="bg-white rounded shadow p-3">
+            <h3 className="font-bold text-lg mb-2">
+              📅 {monthData.label.toUpperCase()}
+            </h3>
+
+            <div className="mb-2 font-bold">
+              Total mois : {t.vente.toLocaleString()} FCFA |
+              Bénéfice : {t.benefice.toLocaleString()} FCFA
+            </div>
+
             <table className="table table-zebra w-full">
               <thead>
                 <tr>
@@ -165,8 +212,9 @@ const fetchVentes = async () => {
                   <th>Actions</th>
                 </tr>
               </thead>
+
               <tbody>
-                {list.map(v => (
+                {monthData.ventes.map(v => (
                   <tr key={v.id}>
                     <td>{new Date(v.dateVente).toLocaleDateString('fr-FR')}</td>
                     <td>{v.client?.nom}</td>
@@ -176,65 +224,55 @@ const fetchVentes = async () => {
                     <td>{v.createdBy?.nom}</td>
                     <td>
                       <button className="btn btn-sm btn-primary mr-1"
-                        onClick={() => handlePrint(v.codeTicket)}>PDF</button>
+                        onClick={() => handlePrint(v.codeTicket)}>
+                        PDF
+                      </button>
+
                       <button className="btn btn-sm btn-error"
-                        onClick={() => handleAnnuler(v)}>Annuler</button>
+                        onClick={() => handleAnnuler(v)}>
+                        Annuler
+                      </button>
                     </td>
                   </tr>
                 ))}
               </tbody>
-              <tfoot className="font-bold">
-                <tr>
-                  <td colSpan="3">Total mois</td>
-                  <td>{t.vente.toLocaleString()} FCFA</td>
-                  <td>{t.benefice.toLocaleString()} FCFA</td>
-                  <td colSpan="2"></td>
-                </tr>
-              </tfoot>
             </table>
           </div>
         );
       })}
 
-      {/* PAGINATION MOIS */}
+      {/* PAGINATION */}
       <div className="flex justify-between mt-4">
         <button
           className="btn btn-sm"
-          onClick={() => setCurrentMonthPage(p => Math.max(p - 1, 0))}
-          disabled={currentMonthPage === 0}
+          onClick={() => setCurrentPage(p => Math.max(p - 1, 0))}
+          disabled={currentPage === 0}
         >
-          ◀ Mois précédent
+          ◀ Précédent
         </button>
 
         <span>
-          Page {currentMonthPage + 1} / {Math.ceil(ventesParMois.length / monthsPerPage)}
+          Page {currentPage + 1} / {Math.ceil(groupedByMonth.length / moisPerPage)}
         </span>
 
         <button
           className="btn btn-sm"
-          onClick={() => setCurrentMonthPage(p => Math.min(p + 1, Math.floor(ventesParMois.length / monthsPerPage)))}
-          disabled={(currentMonthPage + 1) * monthsPerPage >= ventesParMois.length}
+          onClick={() =>
+            setCurrentPage(p =>
+              Math.min(
+                p + 1,
+                Math.ceil(groupedByMonth.length / moisPerPage) - 1
+              )
+            )
+          }
+          disabled={
+            currentPage >=
+            Math.ceil(groupedByMonth.length / moisPerPage) - 1
+          }
         >
-          Mois suivant ▶
+          Suivant ▶
         </button>
       </div>
-
-      {/* GLOBAL TOTAL */}
-      <div className="bg-gray-200 p-3 rounded font-bold flex justify-between">
-        <span>💰 Total ventes : {totalGlobalVente.toLocaleString()} FCFA</span>
-        <span>📈 Bénéfice : {totalGlobalBenefice.toLocaleString()} FCFA</span>
-      </div>
-
-      {/* PDF MODAL */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-4 rounded-xl w-[40%] h-[80%]">
-            <iframe src={pdfUrl} className="w-full h-full" />
-            <button className="btn btn-primary mt-2"
-              onClick={() => setShowModal(false)}>Fermer</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

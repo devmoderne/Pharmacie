@@ -1,12 +1,11 @@
 version: "3.9"
 
 services:
-
   db:
     image: mysql:8.1
     container_name: dbvente
     environment:
-      MYSQL_ROOT_PASSWORD: ""   # mot de passe vide
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: dbvente
     ports:
       - "3307:3306"
@@ -21,15 +20,13 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/dbvente
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: ""   # mot de passe vide
+      SPRING_DATASOURCE_PASSWORD: ""
     ports:
       - "8081:8080"
 
   frontend:
     build: ./Front
     container_name: frontend
-    depends_on:
-      - backend
     ports:
       - "3000:80"
 

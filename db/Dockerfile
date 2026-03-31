@@ -11,3 +11,4 @@ COPY dbvente.sql /docker-entrypoint-initdb.d/
 
 # Port interne du container
 EXPOSE 3306
+
